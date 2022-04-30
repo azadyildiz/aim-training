@@ -1,22 +1,46 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Balon Patlat!</title>
+    <title>aim wars</title>
 </head>
 
 
 <body>
-    <div id="giris">
-        <p id='aimlab' style="font-size: 96;font-family:'Courier New', Courier, monospace;font-weight: bolder; margin: 48px; color: white;" >AIM.EXE</p>
-        <button id="buton">Antrenmana Başla</button>
-
+    <div class="popup" id="startPopup">
+        AIM WARS
+        <input maxlength="16" type="text" id="username-input" placeholder="Enter your username">
+        <div class="buttons">
+            <button class="button" id="play">Play</button>
+            <button class="button" id="leaders">Leaderboard</button>
+        </div>
     </div>
-
-    <div id="balon"></div>
-    <div id="sayac">0</div>
-    <script src="script.js" type="text/javascript"></script> 
+    <div class="popup" id="leaderboardPopup">
+        <div>Leaderboard</div>
+        <div class="list">
+        </div>
+        <div><button class="button" id="back">Go Back</button></div>
+    </div>
+    <div class="popup" id="endPopup">
+        <div></div>
+        <div></div>
+        <a class="button" href="">Play Again</a>
+    </div>
+    <div id="container">
+        <div id="countdown">
+            <div class="countdown-text">
+                10:10
+            </div>
+        </div>
+        <div id="dot"></div>
+        <div id="counter">0</div>
+    </div>
+    <script src="dataController.js"></script>
+    <script src="gameController.js"></script>
+    <script src="uiController.js"></script>
 </body>
+
 </html>

@@ -1,56 +1,171 @@
-body{
-    background-color:rgb(100, 100, 100);
+body {
+    background-color: rgb(100, 100, 100);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    user-select: none;
 }
 
-#giris{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 750px;
-    height: 500px;
+.popup {
+    width: 500px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.2);
     border-radius: 24px;
     background-color: rgb(65, 67, 95);
     text-align: center;
-    justify-content: center;
-    box-shadow: 0px 0px 500px rgb(255, 255, 255) ;
-}
-#buton{
-    margin-top: 96px;
-    font-size: 24px;
-    text-align: center;
-    background:none;
-    outline: none;
-    border:2px solid rgb(255, 255, 255) ;
-    border-radius: 24px;
-    padding: 32px;
-    color: rgb(255, 255, 255) ;
-    font-family:'Courier New', Courier, monospace;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bolder;
+    color: white;
+    padding: 1rem 0;
 }
 
-#balon{
-    display:none;
+#startPopup {
+    display: flex;
+}
+
+#leaderboardPopup {
+    height: 600px;
+    display: none;
+}
+
+#endPopup {
+    display: none;
+}
+
+#username-input {
+    font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: .5rem 1rem;
+    color: white;
+    text-align: center;
+}
+
+#username-input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#container {
+    display: none;
+}
+
+.button {
+    text-align: center;
+    background: none;
+    outline: none;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 24px;
+    padding: 1rem 5rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: .3s;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background-color: white;
+    color: rgb(65, 67, 95);
+}
+
+.buttons {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#dot {
+    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 25px;
     height: 25px;
-    background-color: rgb(65, 67, 95) ;
+    background-color: rgb(65, 67, 95);
     border-radius: 50%;
-
+    cursor: pointer;
 }
 
-#sayac{
-    display: none;
-    position:absolute;
+#counter {
+    display: block;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
     font-size: 200px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: rgb(161, 161, 161);
-    z-index:-1;
-    opacity: 0;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+#countdown {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 10px;
+    animation: countdown-animation linear normal;
+    opacity: .5;
+}
+
+.countdown-text {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    font-size: 18px;
+    font-weight: 900;
+    color: white;
+    width: 100px;
+    height: 10px;
+    overflow: none;
+    cursor: default;
+}
+
+.list {
+    height: 100%;
+    overflow-y: auto;
+    margin: 1rem;
+}
+
+.element {
+    background-color: white;
+    color: black;
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    margin: .5rem;
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+@keyframes countdown-animation {
+    0% {
+        width: 100%;
+        background-color: green;
+    }
+
+    100% {
+        width: 0%;
+        background-color: red;
+    }
+
+    50% {
+        background-color: yellow;
+    }
 }
